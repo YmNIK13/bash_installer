@@ -41,6 +41,16 @@ for file in $(ls -a) ; do
 		apt install -y php$PHP_V-pgsql	> $LOG_FILE 2>&1
 	fi
 
+	if [[ $file =~ "mongo" ]]; then
+		echo -en "\033[1;33m Install PHP Mongo \033[0m\n"
+
+		apt install -y php-pear			> $LOG_FILE 2>&1
+		pecl install mongodb			> $LOG_FILE 2>&1
+		echo "extension=mongodb.so" | sudo tee -a /etc/php/$PHP_V/mods-available/mongodb.ini
+
+		phpenmod mongodb
+	fi
+
 	if [[ $file =~ "redis" ]]; then
 		echo -en "\033[1;33m Install PHP Redis \033[0m\n"
 		apt install -y php$PHP_V-redis	> $LOG_FILE 2>&1

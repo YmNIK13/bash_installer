@@ -1,6 +1,7 @@
 #!/bin/bash
 
 if ! [[ $LOG_FILE ]] ; then LOG_FILE="install.log" ; fi
+if ! [[ $PHP_V ]] ; then PHP_V="8.0" ; fi
 
 if [[ $1 ]] ; then DOMAIN=$1; fi
 
@@ -15,7 +16,7 @@ echo -en "\033[1;32mInstall NGinx  \033[0m\n"
 apt install -y nginx > $LOG_FILE 2>&1
 
 
-cat <<EOF >> /etc/nginx/sites-available/default
+cat <<EOF > /etc/nginx/sites-available/default
 set_real_ip_from 103.21.244.0/22;
 set_real_ip_from 103.22.200.0/22;
 set_real_ip_from 103.31.4.0/22;
