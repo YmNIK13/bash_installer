@@ -5,22 +5,13 @@ Web Server Action Script on Ubuntu
 
 1. Для використання скачайте й розпакуйте скрипти
 ```
-sudo apt install -y unzip wget
-
-wget https://github.com/YmNIK13/bash_installer/archive/refs/heads/master.zip
-
-unzip master.zip -d install
-
-rm master.zip
+sudo apt install -y unzip wget && wget https://github.com/YmNIK13/bash_installer/archive/refs/heads/master.zip && unzip master.zip && mv bash_installer-master/ install && rm master.zip && cd install
 ```
+2. Видаліть не потрібне ПО (за назвою файла)
 
-2. Перейдіть в директорію `cd install`
+3. Відкрийте скрипт `nano start.sh`
 
-3. Видаліть не потрібне ПО (за назвою файла)
-
-4. Відкрийте скрипт `nano start.sh`
-
-5. Встановіть чи видаліть змінні
+4. Встановіть чи видаліть змінні
 
 ```
 SSH_PORT - якщо хочете змінити порт, обовязково пропишіть ваш ключ доступу до серверу, так як вхід через пароль буде закрито
@@ -41,6 +32,6 @@ PGS_NAME_DB=
 PGS_NAME_USER=
 PGS_NAME_PASS=
 ```
-6. Збережіть зміни `Ctrl + O`
+5. Збережіть зміни `Ctrl + O`
 
-7. Запустіть скрипт `bash start.sh`
+6. Запустіть скрипт `bash start.sh`
