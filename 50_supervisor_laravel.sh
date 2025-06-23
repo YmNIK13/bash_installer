@@ -6,7 +6,7 @@ if ! [[ $LOG_FILE ]] ; then LOG_FILE="install.log" ; fi
 echo -en "\033[1;32m============================ \033[0m\n"
 echo -en "\033[1;32mInstall SuperVisor  \033[0m\n"
 
-apt install -y supervisor > $LOG_FILE 2>&1
+apt-get install -y supervisor > $LOG_FILE 2>&1
 
 
 if [[ $DOMAIN ]] ; then

@@ -18,25 +18,25 @@ NEEDRESTART_MODE=a
 DEBIAN_FRONTEND=noninteractive 
 
 echo -en "\033[1;33m Update Ubuntu \033[0m\n" 
-apt update 		> $LOG_FILE 2>&1
-apt upgrade -yq > $LOG_FILE 2>&1
+apt-get update 		> $LOG_FILE 2>&1
+apt-get upgrade -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" >> $LOG_FILE 2>&1
 
-apt install -y software-properties-common  	> $LOG_FILE 2>&1
+apt-get install -y software-properties-common  	> $LOG_FILE 2>&1
 add-apt-repository -y ppa:ondrej/php		> $LOG_FILE 2>&1
 
-apt update		> $LOG_FILE 2>&1
+apt-get update		> $LOG_FILE 2>&1
 
 echo -en "\033[1;33m Install unzip \033[0m\n" 
-apt install -y unzip 	> $LOG_FILE 2>&1
+apt-get install -y unzip 	> $LOG_FILE 2>&1
 
 echo -en "\033[1;33m Install htop \033[0m\n" 
-apt install -y htop  	> $LOG_FILE 2>&1
+apt-get install -y htop  	> $LOG_FILE 2>&1
 
 echo -en "\033[1;33m Install curl \033[0m\n" 
-apt install -y curl  	> $LOG_FILE 2>&1
+apt-get install -y curl  	> $LOG_FILE 2>&1
 
 echo -en "\033[1;33m Install git \033[0m\n" 
-apt install -y git 		> $LOG_FILE 2>&1
+apt-get install -y git 		> $LOG_FILE 2>&1
 
 
 

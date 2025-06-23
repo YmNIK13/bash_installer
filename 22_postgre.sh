@@ -10,7 +10,7 @@ sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg
 
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -	> $LOG_FILE 2>&1
 
-apt update	> $LOG_FILE 2>&1
+apt-get update	> $LOG_FILE 2>&1
 
 apt -y install postgresql	> $LOG_FILE 2>&1
 

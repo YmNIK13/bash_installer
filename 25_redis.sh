@@ -8,5 +8,5 @@ echo -en "\n\033[1;32m============================ \033[0m\n"
 echo -en "\033[1;32mInstall redis  \033[0m\n"
 echo -en "\033[1;32m============================ \033[0m\n"
 
-apt install -y redis-server > $LOG_FILE 2>&1
+apt-get install -y redis-server > $LOG_FILE 2>&1
 

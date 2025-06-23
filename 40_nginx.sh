@@ -13,7 +13,7 @@ if [[ $PUBLIC_PATH ]] ; then PUBLIC_PATH=""; fi
 echo -en "\n\033[1;32m============================ \033[0m\n"
 echo -en "\033[1;32mInstall NGinx  \033[0m\n"
 
-apt install -y nginx > $LOG_FILE 2>&1
+apt-get install -y nginx > $LOG_FILE 2>&1
 
 
 cat <<EOF > /etc/nginx/sites-available/default
@@ -102,7 +102,7 @@ systemctl restart nginx > $LOG_FILE 2>&1
 if ! [[ -f /usr/bin/certbot ]] ; then
 echo -en "\033[1;32mInstall Cer Bot  \033[0m\n"
 
-apt install -y snapd	> $LOG_FILE 2>&1
+apt-get install -y snapd	> $LOG_FILE 2>&1
 
 snap install core		> $LOG_FILE 2>&1
 snap refresh core		> $LOG_FILE 2>&1

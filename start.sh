@@ -1,10 +1,13 @@
 #!/bin/bash
 set -e
+> install.log
+trap 'echo -e "\n\033[0;31m❌ Install failed. Check install.log\033[0m\n"; tail -n 50 install.log' ERR
 
 SSH_PORT=
 
 DOMAIN=
 PUBLIC_PATH=""
+SWAP=2048
 
 PHP_V=8.1
 
@@ -36,5 +39,5 @@ done
 systemctl daemon-reload
 
 echo -en "\033[1;32m============================ \033[0m\n"
-echo -en "\033[1;32mInstall site complite \033[0m\n"
+echo -en "\033[1;32mInstall site complete \033[0m\n"
 echo -en "\033[1;32m============================ \033[0m\n"

@@ -5,7 +5,7 @@ Web Server Action Script on Ubuntu
 
 1. Для використання скачайте й розпакуйте скрипти
 ```
-sudo apt install -y unzip wget && wget https://github.com/YmNIK13/bash_installer/archive/refs/heads/master.zip && unzip master.zip && mv bash_installer-master/ install && rm master.zip && cd install
+sudo apt-get install -y unzip wget && wget https://github.com/YmNIK13/bash_installer/archive/refs/heads/master.zip && unzip master.zip && mv bash_installer-master/ install && rm master.zip && cd install
 ```
 2. Видаліть не потрібне ПО (за назвою файла)
 
